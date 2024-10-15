@@ -1,0 +1,94 @@
+% Titulo
+\newcommand\reporttitle{Exemplo de titulo de um trabalho}
+
+% Modulo
+\newcommand\reportsubtitle{
+9999 - Nome do módulo
+}
+
+% Grupo
+\newcommand{\autores}{%
+    \begin{tabular}{@{}l@{}}
+        \textbf{Autores:} \\[0.1em]
+        Autor 1 \\[0.1em]
+        Autor 2 \\[0.1em]
+        Autor 3 \\[0.1em]
+        Autor 4
+    \end{tabular}%
+}
+
+% Formador
+\newcommand{\formador}{%
+    \begin{tabular}{@{}l@{}}
+        \textbf{Formador:} \\[0.1em]
+        Formador 1 
+    \end{tabular}%
+}
+
+% Curso
+\newcommand{\cursoextenso}{Técnico/a Especialista em Tecnologias e Programação de Sistemas de Informação}
+\newcommand{\curso}{TPSI PL 1223}
+
+% Local e data
+\newcommand\placeanddate{
+    \vspace{-0.5cm}
+    Palmela, \today
+}
+
+% Color scheme
+\definecolor{color_scheme}{RGB}{8, 163, 227}
+
+% Hyperlink colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=color_scheme,
+    urlcolor=color_scheme,
+    citecolor = color_scheme
+    }
+\urlstyle{same} % setting for link and reference formatting
+
+% Change bullet style for itemize
+\renewcommand{\labelitemi}{\scriptsize\textcolor{color_scheme}{$\blacksquare$}}% level 1
+\renewcommand{\labelitemii}{\scriptsize\textcolor{color_scheme}{$\square$}}% level 2
+\renewcommand{\labelitemiii}{\textcolor{color_scheme}{$\circ$}}% level 3
+
+% Change bullet style for enumerate
+\renewcommand{\labelenumi}{\textbf{\textcolor{color_scheme}{\arabic*.}}}% level 1
+\renewcommand{\labelenumii}{\textbf{\textcolor{color_scheme}{[\alph*]}}}% level 2
+\renewcommand{\labelenumiii}{\textbf{\textcolor{color_scheme}{\roman*.}}}% level 3
+
+% reference labels linked to section
+\counterwithin{equation}{section} % For equations
+\counterwithin{figure}{section} % For figures
+\counterwithin{table}{section} % For tables
+
+% Create header/footer
+\pagestyle{fancy}
+\setlength{\headheight}{17pt}
+\lhead{\raisebox{-0.1\height}{\includegraphics[height=12pt]{Figures/0. General/atec_2.png}}}
+\rhead{\raisebox{0.05\height}{ \reporttitle, \reportsubtitle, Grupo 1}}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{Página \thepage}
+
+% Formats section, subsection and subsubsection titles 
+\titleformat{\section}{\sffamily\color{color_scheme}\LARGE\bfseries}{\thesection\enskip\color{gray}\textbar\enskip}{0cm}{}
+\titleformat{\subsection}{\sffamily\color{color_scheme}\large\bfseries}{\thesubsection\enskip\color{gray}\textbar\enskip}{0cm}{}
+\titleformat{\subsubsection}{\sffamily\color{color_scheme}\bfseries}{\thesubsubsection\enskip\color{gray}\textbar\enskip}{0cm}{}
+
+% Format captions
+\DeclareCaptionFont{color_scheme}{\color{color_scheme}}
+\captionsetup{labelfont={color_scheme,bf}}
+
+% Change font to arial
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Removes indent when starting a new paragraph
+\setlength\parindent{0pt}
+
+% Limits the ToC to sections and subsections only, no subsubsections
+\setcounter{tocdepth}{2}
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
